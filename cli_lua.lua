@@ -1,4 +1,11 @@
+local file = io.open(arg[0],"r") 
 
-local test = arg[1]
+local text =""	
+while true do
 
-print(test)
+local line = file:read("*l")
+	if line == nil then break end
+	text = line .. "\n" .. text
+end
+
+print(text)
